@@ -1,0 +1,9 @@
+{
+    "Id" : "BetterBatchCraftCosts",
+    "Name" : "Better Batch Craft Costs",
+    "Description" : "Fixes Batch Craft Power Cost Formula",
+    "Dependencies" : [],
+    "ModVersion" : "1.0.0",
+    "GameVersion" : "0.11.0",
+    "DLLFiles" : []
+}

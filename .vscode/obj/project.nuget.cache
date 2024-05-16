@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "sRglwTSGw8E=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Balthazar3\\AppData\\LocalLow\\Kodo Linija\\Stardeus\\Mods\\BetterBatchCraftingCosts\\.vscode\\mod.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Balthazar3\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.3\\microsoft.netframework.referenceassemblies.1.0.3.nupkg.sha512",
+    "C:\\Users\\Balthazar3\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net472\\1.0.3\\microsoft.netframework.referenceassemblies.net472.1.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

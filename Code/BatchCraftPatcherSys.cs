@@ -16,14 +16,19 @@ namespace BetterBatchCraftCosts {
             GameSystems.Register(SysId, () => new BatchCraftPatcherSys());
 
             var harmony = new Harmony("com.BetterBatchCraftCosts.patch");
-            var original = typeof(Equations).GetMethod(nameof(Equations.BatchSizeHalfCost));
-            var prefix = typeof(BatchCraftPatch).GetMethod(nameof(BatchCraftPatch.BatchSizeHalfCost));
-            harmony.Patch(original, new HarmonyMethod(prefix));
+            harmony.PatchAll();
+            // Example of patching without annotations
+            // var original = typeof(Equations).GetMethod(nameof(Equations.BatchSizeHalfCost));
+            // var prefix = typeof(BatchCraftPatch).GetMethod(nameof(BatchCraftPatch.BatchSizeHalfCost));
+            // harmony.Patch(original, new HarmonyMethod(prefix));
         }
 
-        public class BatchCraftPatch
+        // Annotations to inform Harmony Lib of the target method to patch
+        [HarmonyPatch(typeof(Equations))]
+        [HarmonyPatch("BatchSizeHalfCost")]
+        class BatchCraftPatch
         {
-            public static bool BatchSizeHalfCost(ref float __result, int bs)
+            static bool Prefix(ref float __result, int bs)
             {
                 __result = (float) ( bs * 0.1 + 0.9);
                 return false;

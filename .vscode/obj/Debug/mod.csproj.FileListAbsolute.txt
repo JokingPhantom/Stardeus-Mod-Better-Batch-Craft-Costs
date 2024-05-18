@@ -3,8 +3,8 @@ C:\Users\Balthazar3\AppData\LocalLow\Kodo Linija\Stardeus\Mods\JPV0.11.0\.vscode
 C:\Users\Balthazar3\AppData\LocalLow\Kodo Linija\Stardeus\Mods\JPV0.11.0\.vscode\obj\Debug\mod.csproj.CoreCompileInputs.cache
 C:\Users\Balthazar3\AppData\LocalLow\Kodo Linija\Stardeus\Mods\JPV0.11.0\Libraries\JPV0.11.0.dll
 C:\Users\Balthazar3\AppData\LocalLow\Kodo Linija\Stardeus\Mods\JPV0.11.0\.vscode\obj\Debug\JPV0.11.0.dll
-C:\Users\Balthazar3\AppData\LocalLow\Kodo Linija\Stardeus\Mods\BetterBatchCraftingCosts\Libraries\BetterBatchCraftCosts.dll
 C:\Users\Balthazar3\AppData\LocalLow\Kodo Linija\Stardeus\Mods\BetterBatchCraftingCosts\.vscode\obj\Debug\mod.csproj.AssemblyReference.cache
 C:\Users\Balthazar3\AppData\LocalLow\Kodo Linija\Stardeus\Mods\BetterBatchCraftingCosts\.vscode\obj\Debug\mod.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\Balthazar3\AppData\LocalLow\Kodo Linija\Stardeus\Mods\BetterBatchCraftingCosts\.vscode\obj\Debug\mod.csproj.CoreCompileInputs.cache
-C:\Users\Balthazar3\AppData\LocalLow\Kodo Linija\Stardeus\Mods\BetterBatchCraftingCosts\.vscode\obj\Debug\BetterBatchCraftCosts.dll
+C:\Users\Balthazar3\AppData\LocalLow\Kodo Linija\Stardeus\Mods\BetterBatchCraftingCosts\Libraries\AdjustBatchCraftCosts.dll
+C:\Users\Balthazar3\AppData\LocalLow\Kodo Linija\Stardeus\Mods\BetterBatchCraftingCosts\.vscode\obj\Debug\AdjustBatchCraftCosts.dll

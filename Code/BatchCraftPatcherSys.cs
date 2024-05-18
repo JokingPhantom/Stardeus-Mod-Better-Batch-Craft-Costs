@@ -1,52 +1,32 @@
 using HarmonyLib;
 using Game.Utils;
 using UnityEngine;
-using Game.Systems;
 
-namespace BetterBatchCraftCosts {
-    public sealed class BatchCraftPatcherSys : GameSystem {
-        // The convention is that all systems end with Sys, and SysId is equal to the class name
-        public const string SysId = "BatchCraftPatcherSys";
-        public override string Id => SysId;
-        // If your system can work in sandbox too, set this to false
-        public override bool SkipInSandbox => false;
+public sealed class BatchCraftPatcher {
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    private static void Register() {
+        var harmony = new Harmony("com.BatchCraftPatcher.patch");
+        harmony.PatchAll();
+    }
+}
 
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
-        private static void Register() {
-            GameSystems.Register(SysId, () => new BatchCraftPatcherSys());
+// Annotations to inform Harmony Lib of the target method to patch
+[HarmonyPatch(typeof(Equations))]
+class BatchCraftPatch
+{
+    [HarmonyPrefix]
+    [HarmonyPatch("BatchSizeCost")]
+    static bool Prefix(ref float __result, int bs)
+    {
+        __result = (float) ( bs * 0.1 + 0.9);
+        return false;
+    }
 
-            var harmony = new Harmony("com.BetterBatchCraftCosts.patch");
-            harmony.PatchAll();
-            // Example of patching without annotations
-            // var original = typeof(Equations).GetMethod(nameof(Equations.BatchSizeHalfCost));
-            // var prefix = typeof(BatchCraftPatch).GetMethod(nameof(BatchCraftPatch.BatchSizeHalfCost));
-            // harmony.Patch(original, new HarmonyMethod(prefix));
-        }
-
-        // Annotations to inform Harmony Lib of the target method to patch
-        [HarmonyPatch(typeof(Equations))]
-        [HarmonyPatch("BatchSizeHalfCost")]
-        class BatchCraftPatch
-        {
-            static bool Prefix(ref float __result, int bs)
-            {
-                __result = (float) ( bs * 0.1 + 0.9);
-                return false;
-            }
-
-            // public static float OriginalBatchSizeHalfCost(int bs)
-            // {
-            //     if (bs < 2)
-            //         return 1f;
-            //     float num1 = 1.99649f;
-            //     float num2 = 0.0233918f;
-            //     return (float) ((-0.019882999360561371 * (double) bs * (double) bs + (double) num1 * (double) bs + (double) num2) / 2.0);
-            // }
-        }
-        protected override void OnInitialize() {
-        }
-
-        public override void Unload() {
-        }
-	}
+    // public static float OriginalBatchSizeCost(int bs)
+    // {
+    //   if (bs < 2)
+    //     return 1f;
+    //   float num = 1.01053f;
+    //   return (float) (-0.01052630040794611 * (double) bs) + num;
+    // }
 }
